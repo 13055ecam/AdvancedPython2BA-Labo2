@@ -70,7 +70,7 @@ class Chat():
         while self.__running:
             try:
                 data, address = self.__s.recvfrom(1024)
-                print(data.decode(),adress)
+                print("<{}>:{}".format(address,data.decode()))
             except socket.timeout:
                 pass
             except OSError:
