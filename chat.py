@@ -5,6 +5,7 @@
 import socket
 import sys
 import threading
+from colorama import*
 
 class Chat():
     def __init__(self, host=socket.gethostname(), port=2000):
@@ -70,7 +71,7 @@ class Chat():
         while self.__running:
             try:
                 data, address = self.__s.recvfrom(1024)
-                print("<{}>:{}".format(address,data.decode()))
+                print(Fore.YELLOW+"{}".format(address)+Fore.RESET+" dit :{}".format(data.decode()))
             except socket.timeout:
                 pass
             except OSError:
