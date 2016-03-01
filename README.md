@@ -15,7 +15,7 @@ Ce projet a été testé sur mac, il est possible que ce ne soit pas la même ch
 - Lancer le fichier server.py:
 	=> python3 server.py
 
-Connection Client-serveur
+Connection Client-serveur:
 - Revenez à la racine du du dossier décompressé et allez dans le dossier«Client»:
 	=>| cd…
 - Dans ce dossier, il y a un fichier python appelé «client.py» qui permet aux clients de s’identifier lors de la connection au serveur et de lui envoyez une requête afin qu’il affiche la liste des personnes qui se sont connectées.
