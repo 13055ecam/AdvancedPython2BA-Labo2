@@ -8,96 +8,26 @@ import socket
 import sys
 from cryptage import *
 
-SERVERADDRESS = (socket.gethostname(), 6000)
-CLIENTADDRESS = (socket.gethostname(), 4000)
-
-'''class EchoServer():
-    def __init__(self):
-        self.__s = socket.socket()
-        self.__s.bind(SERVERADDRESS)
-
-
-    def run(self):
-        self.__s.listen(5)
-        while True:
-            client, addr = self.__s.accept()
-
-            print(addr)
-            people = []
-
-            try:
-                acces, port = self._receive(client)
-                if acces == True:
-                    i = 0
-                    host = socket.gethostname()
-                    people.append(host)
-                    people.append(port)
-                    print(people)''''''
-
-                    self.__s.connect(CLIENTADDRESS)
-                    totalsent = 0
-                    while i < len(people):
-                        msg = people[i].encode
-                        print(msg)
-                        try:
-                            while totalsent < len(msg):
-                                sent = client.send(msg[totalsent:])
-                                totalsent += sent
-                        except:
-                            print('pas parti =/')
-                        i += 1
-                    ''''''
-                else:
-                    print(acces)
-                client.close()
-            except OSError:
-                print('Erreur lors de la réception du message.')
-
-    def _receive(self, client):
-        chunks = []
-        finished = False
-        acces = 'nop'
-        while not finished:
-            data = client.recv(1024)
-            chunks.append(data)
-            finished = data == b''
-        message = b''.join(chunks).decode()
-        password, port = message.split(':')
-        with open('mdp.txt', 'r') as us:
-            user_pass = us.read()
-        if check_password(user_pass, password):
-            acces = True
-        return acces, port
-'''
+SERVERADDRESS = ('TourWilliam', 6000)
+CLIENTADDRESS = (socket.gethostname(), 6000)
 
 class EchoClient():
     def __init__(self, message):
         self.__message = message
         self.__s = socket.socket()
-        self.__s.bind(CLIENTADDRESS)
 
     def run(self):
-        #try:
+        try:
             self.__s.connect(SERVERADDRESS)
             self._send()
-            self.__s.listen(5)
-            server, addr = self.__s.accept()
-            print(addr)
-            #try:
-            '''while True:
-                self.__s.listen(5)
-                server, addr = self.__s.accept()
-                chunks = []
-                finished = False
-                while not finished:
-                    data = server.recv(1024)
-                    chunks.append(data)
-                    finished = data == b''
-                    print(b''.join(chunks).decode())'''
-            #except:
-                    #print('Fail')
+
+            '''
+            data = self.__s.recv(4096)
+            print(data)
+            '''
+
             self.__s.close()
-        #except OSError:
+        except OSError:
             print('Serveur introuvable, connexion impossible.')
 
     def _send(self):

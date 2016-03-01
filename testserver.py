@@ -19,39 +19,30 @@ class EchoServer():
 
     def run(self):
         self.__s.listen(5)
-        print(SERVERADDRESS)
         while True:
             client, addr = self.__s.accept()
-
             print(addr)
             people = []
 
-            try:
-                acces, port = self._receive(client)
-                if acces == True:
-                    i = 0
-                    people.append(addr)
-                    people.append(port)
-                    print(people)
+            #try:
+            acces, port = self._receive(client)
+            if acces == True:
+                i = 0
+                people.append(addr)
+                people.append(port)
+                print(people[i])
+                client.sendall('prout')
+                '''
+                while 1:
+                    sendpeople = people[i]
+                    if not sendpeople: break
+                    client.sendall(str(sendpeople[1]).encode())
                     '''
-                    self.__s.connect(CLIENTADDRESS)
-                    totalsent = 0
-                    while i < len(people):
-                        msg = people[i].encode()
-                        print(msg)
-                        try:
-                            while totalsent < len(msg):
-                                sent = client.send(msg[totalsent:])
-                                totalsent += sent
-                        except:
-                            print('pas parti =/')
-                        i += 1
-                    '''
-                else:
-                    print(acces)
-                client.close()
-            except OSError:
-                print('Erreur lors de la réception du message.')
+            else:
+                print(acces)
+            client.close()
+            #except OSError:
+                #print('Erreur lors de la réception du message.')
 
     def _receive(self, client):
         chunks = []
@@ -68,48 +59,6 @@ class EchoServer():
         if check_password(user_pass, password):
             acces = True
         return acces, port
-
-'''
-class EchoClient():
-    def __init__(self, message):
-        self.__message = message
-        self.__s = socket.socket()
-        self.__s.bind(CLIENTADDRESS)
-
-    def run(self):
-        #try:
-            self.__s.connect(SERVERADDRESS)
-            self._send()
-            self.__s.listen(5)
-            server, addr = self.__s.accept()
-            print(addr)
-            #try:''''''
-            while True:
-                self.__s.listen(5)
-                server, addr = self.__s.accept()
-                chunks = []
-                finished = False
-                while not finished:
-                    data = server.recv(1024)
-                    chunks.append(data)
-                    finished = data == b''
-                    print(b''.join(chunks).decode())''''''
-            #except:
-                    #print('Fail')
-            self.__s.close()
-        #except OSError:
-            print('Serveur introuvable, connexion impossible.')
-
-    def _send(self):
-        totalsent = 0
-        msg = self.__message
-        try:
-            while totalsent < len(msg):
-                sent = self.__s.send(msg[totalsent:])
-                totalsent += sent
-        except OSError:
-            print("Erreur lors de l'envoi du message.")
-'''
 
 if __name__ == '__main__':
     if len(sys.argv) == 2 and sys.argv[1] == 'server':
