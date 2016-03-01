@@ -1,11 +1,11 @@
 Ce projet a été testé sur mac, il est possible que ce ne soit pas la même chose sur d’autres OS.
 
 - Décompressez le fichier du dépôt Github sur votre ordinateur.
-- Lancez votre terminal(Applications/utilitaires ou Commande + Maj + U)
+- Lancez votre terminal (Applications/utilitaires ou Commande + Maj + U)
 
 #mode client/serveur
-- Aller dans le dossier « server » du dossier décompressé en path:
-     =>cd <path>
+- Aller dans le dossier «server» du dossier décompressé en path:
+     => cd <path>
 - Dans ce dossier, vous pouvez voir 3 fichiers : 
 
 	- cryptage.py -> permet de vérifier le mot de passe inscrit par le client en le comparant avec celui du fichier « mdp.txt ».
