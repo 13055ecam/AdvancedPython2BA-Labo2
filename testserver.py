@@ -9,7 +9,7 @@ import sys
 from cryptage import *
 
 SERVERADDRESS = (socket.gethostname(), 6000)
-CLIENTADDRESS = (socket.gethostname(), 4000)
+#CLIENTADDRESS = (socket.gethostname(), 4000)
 
 class EchoServer():
     def __init__(self):
@@ -19,6 +19,7 @@ class EchoServer():
 
     def run(self):
         self.__s.listen(5)
+        print(SERVERADDRESS)
         while True:
             client, addr = self.__s.accept()
 
@@ -29,15 +30,14 @@ class EchoServer():
                 acces, port = self._receive(client)
                 if acces == True:
                     i = 0
-                    host = socket.gethostname()
-                    people.append(host)
+                    people.append(addr)
                     people.append(port)
                     print(people)
                     '''
                     self.__s.connect(CLIENTADDRESS)
                     totalsent = 0
                     while i < len(people):
-                        msg = people[i].encode
+                        msg = people[i].encode()
                         print(msg)
                         try:
                             while totalsent < len(msg):
@@ -69,7 +69,7 @@ class EchoServer():
             acces = True
         return acces, port
 
-
+'''
 class EchoClient():
     def __init__(self, message):
         self.__message = message
@@ -83,8 +83,8 @@ class EchoClient():
             self.__s.listen(5)
             server, addr = self.__s.accept()
             print(addr)
-            #try:
-            '''while True:
+            #try:''''''
+            while True:
                 self.__s.listen(5)
                 server, addr = self.__s.accept()
                 chunks = []
@@ -93,7 +93,7 @@ class EchoClient():
                     data = server.recv(1024)
                     chunks.append(data)
                     finished = data == b''
-                    print(b''.join(chunks).decode())'''
+                    print(b''.join(chunks).decode())''''''
             #except:
                     #print('Fail')
             self.__s.close()
@@ -109,7 +109,7 @@ class EchoClient():
                 totalsent += sent
         except OSError:
             print("Erreur lors de l'envoi du message.")
-
+'''
 
 if __name__ == '__main__':
     if len(sys.argv) == 2 and sys.argv[1] == 'server':

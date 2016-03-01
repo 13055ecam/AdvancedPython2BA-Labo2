@@ -11,7 +11,7 @@ from cryptage import *
 SERVERADDRESS = (socket.gethostname(), 6000)
 CLIENTADDRESS = (socket.gethostname(), 4000)
 
-class EchoServer():
+'''class EchoServer():
     def __init__(self):
         self.__s = socket.socket()
         self.__s.bind(SERVERADDRESS)
@@ -32,8 +32,8 @@ class EchoServer():
                     host = socket.gethostname()
                     people.append(host)
                     people.append(port)
-                    print(people)
-                    '''
+                    print(people)''''''
+
                     self.__s.connect(CLIENTADDRESS)
                     totalsent = 0
                     while i < len(people):
@@ -46,7 +46,7 @@ class EchoServer():
                         except:
                             print('pas parti =/')
                         i += 1
-                    '''
+                    ''''''
                 else:
                     print(acces)
                 client.close()
@@ -68,7 +68,7 @@ class EchoServer():
         if check_password(user_pass, password):
             acces = True
         return acces, port
-
+'''
 
 class EchoClient():
     def __init__(self, message):
