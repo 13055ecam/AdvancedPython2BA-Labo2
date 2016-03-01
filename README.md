@@ -2,7 +2,7 @@ Ce projet a été testé sur mac, il est possible que ce ne soit pas la même ch
 
 - Décompressez le fichier du dépôt Github sur votre ordinateur.
 - Lancez votre terminal(Applications/utilitaires ou Commande + Maj + U)
-=======================================================================================================================================
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 #mode client/serveur
 - Aller dans le dossier « server » du dossier décompressé en path:
      =>cd <path>
@@ -14,7 +14,7 @@ Ce projet a été testé sur mac, il est possible que ce ne soit pas la même ch
 
 - Lancer le fichier server.py:
 	=> python3 server.py
-——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 #Connection Client-serveur
 - Revenez à la racine du du dossier décompressé et allez dans le dossier« Client »:
 	=>| cd…
