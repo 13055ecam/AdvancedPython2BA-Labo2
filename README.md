@@ -6,7 +6,7 @@ Ce projet a été testé sur mac, il est possible que ce ne soit pas la même ch
 #Mode client/serveur
 - Aller dans le dossier «server» du dossier décompressé en path:
      => cd <path>
-- Dans ce dossier, vous pouvez voir 3 fichiers : 
+- Dans ce dossier, vous pouvez voir 3 fichiers: 
 
 	- cryptage.py -> permet de vérifier le mot de passe inscrit par le client en le comparant avec celui du fichier «mdp.txt».
 	- mdp.txt ————-> renferme un mot de passe crypté.
