@@ -1,4 +1,4 @@
-——> Ce projet a été testé sur mac,il est possible que ce ne soit pas la même chose sur d’autres OS.
+Ce projet a été testé sur mac, il est possible que ce ne soit pas la même chose sur d’autres OS.
 
 - Décompressez le fichier du dépôt Github sur votre ordinateur.
 - Lancez votre terminal(Applications/utilitaires ou Commande + Maj + U)
