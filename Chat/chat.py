@@ -1,6 +1,7 @@
 ﻿#!/usr/bin/env python3
-# author: Sébastien Combéfis
-# version: February 15, 2016
+# chat.py
+# author: Chagnot William & Lenaerts Alexandre
+# version: March 2, 2016
 
 import socket
 import sys
