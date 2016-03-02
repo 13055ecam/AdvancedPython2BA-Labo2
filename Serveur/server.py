@@ -1,5 +1,5 @@
 # server.py
-# author: Chagnot William
+# author: Chagnot William & Lenaerts Alexandre
 # version: March 2, 2016
 
 import threading
@@ -23,6 +23,10 @@ class EchoServer():
         while True:
             client, addr = self.__s.accept()
             acces, name, ip, port = self._receive(client)
+            with open('people.txt', 'a') as file:
+                file.write(name + '_')
+                file.write(ip + '_')
+                file.write(port + '/')
             if acces == True:
                 people.append(name)
                 people.append(ip)
