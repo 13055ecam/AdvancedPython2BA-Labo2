@@ -1,4 +1,4 @@
-# author: Chagnot William
+# author: Chagnot William & Lenaerts Alexandre
 
 import os  # to see if the files have the same len()
 import uuid
