@@ -1,6 +1,6 @@
-#MD5Test3 + MD5Test4
+# author: Chagnot William
 
-import os  # pour comparer les fichiers
+import os  # to see if the files have the same len()
 import uuid
 import hashlib
 
@@ -13,20 +13,17 @@ def hash_password(password):
 
 def comparefichiers(fichier1, fichier2, lgbuf=16*1024):
 
-    """Compare les 2 fichiers et renvoie True s'ils sont identiques
-       lgbuf est la taille du buffer de lecture
-    """
     if os.path.getsize(fichier1) != os.path.getsize(fichier2):
-        return False            # les fichiers n'ont pas la même longueur
+        return False            # the files have a different size
 
     with open(fichier1, "rb") as f1, open(fichier2, "rb") as f2:
         while True:
             buf1 = f1.read(lgbuf)
             if len(buf1) == 0:
-                return True         # fin de lecture: pas de différence
+                return True         # same files
             buf2 = f2.read(lgbuf)
             if buf1 != buf2:
-                return False        # on a trouvé une différence
+                return False        # different files
 
 
 def check_password(user_password, test_password):
