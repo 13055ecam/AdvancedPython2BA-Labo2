@@ -1,5 +1,5 @@
 # client.py
-# author: Chagnot William
+# author: Chagnot William & Lenaerts Alexandre
 # version: March 2, 2016
 
 import threading
