@@ -11,6 +11,8 @@ Ce projet a été testé sur mac, il est possible que ce ne soit pas la même ch
 	- cryptage.py -> permet de vérifier le mot de passe inscrit par le client en le comparant avec celui du fichier «mdp.txt».
 	- mdp.txt ————-> renferme un mot de passe crypté.
 	- server.py ——-> permet de mettre en route le serveur
+	- people.txt -> Le serveur écrit dans un fichiers les gens qui se connectent pour éviter de perdre leurs données si jamais le serveur plante
+
 
 - Lancer le fichier server.py:
 	=> python3 server.py server
@@ -21,7 +23,6 @@ Connection Client-serveur:
 - Dans ce dossier, il y a un fichier python appelé «client.py» qui permet aux clients de s’identifier lors de la connection au serveur et de lui envoyez une requête afin qu’il affiche la liste des personnes qui se sont connectées.
 	=> python3 client.py client
 !!!! Le client doit retenir les ip ainsi que les n° de port des utilisateurs avec lequel il veut discuter dans un chat privé !!!!!! 
-
 #Mode peer-to-peer.
 - Revenez à la racine du dossier décompressé et allez dans le dossier «Chat»:
 	=> |cd… 
