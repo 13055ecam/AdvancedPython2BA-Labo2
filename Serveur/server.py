@@ -1,5 +1,5 @@
 # server.py
-# author: Chagnot William & Lenaerts Alexandre
+# author: Chagnot William & Lenaerts Alexandre 
 # version: March 2, 2016
 
 import threading
