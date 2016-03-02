@@ -13,7 +13,7 @@ Ce projet a été testé sur mac, il est possible que ce ne soit pas la même ch
 	- server.py ——-> permet de mettre en route le serveur
 
 - Lancer le fichier server.py:
-	=> python3 server.py serveur
+	=> python3 server.py server
 
 Connection Client-serveur:
 - Revenez à la racine du du dossier décompressé et allez dans le dossier«Client»:
